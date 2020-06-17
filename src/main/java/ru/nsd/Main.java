@@ -8,6 +8,6 @@ public class Main {
         Matrix matrix = new Matrix();
         System.out.println(matrix.toString());
         Graph graph = new Graph(matrix);
-        System.out.println(graph.quantityOfIslands(graph)- matrix.quantityOfDots());
+        System.out.println(graph.quantityOfIslands()- matrix.quantityOfDots());
     }
 }

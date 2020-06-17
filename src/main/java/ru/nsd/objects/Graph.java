@@ -43,6 +43,9 @@ public class Graph {
         this.numberOfConnectedComponent = numberOfConnectedComponent;
     }
 
+    public int[] getNumberOfConnectedComponent() {
+        return numberOfConnectedComponent;
+    }
 
     public String toString() {
         StringBuffer sb = new StringBuffer();
@@ -57,7 +60,8 @@ public class Graph {
         return sb.toString();
     }
 
-    public char[] toOneDimensionalArray(char[][] arrayGraph) {
+    public char[] toOneDimensionalArray() {
+        int n = arrayGraph.length;
         char[] arr = new char[n * n];
         int k = 0;
         for (int i = 0; i < n; i++) {
@@ -69,12 +73,12 @@ public class Graph {
         return arr;
     }
 
-    public int quantityOfIslands(Graph graph) {
+    public int quantityOfIslands() {
         ArrayList<Island> islands = new ArrayList<>();
         int quantityOfConnectedComponent = 0;
-        for (int i = 0; i < graph.n; i++) {
+        for (int i = 0; i < n; i++) {
             Island island;
-            if (numberOfConnectedComponent[i] == 0) {
+            if (getNumberOfConnectedComponent()[i] == 0) {
                 island = new Island();
                 quantityOfConnectedComponent++;
                 dfs(i, quantityOfConnectedComponent, island);
@@ -85,7 +89,7 @@ public class Graph {
         return islands.size();
     }
 
-    public void dfs(int i, int quantity, Island island) {
+    private void dfs(int i, int quantity, Island island) {
         island.add(i);
         numberOfConnectedComponent[i] = quantity;
         for (int j = 0; j < arrayGraph.length; j++) {

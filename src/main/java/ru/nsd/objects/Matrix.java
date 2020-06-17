@@ -20,6 +20,12 @@ public class Matrix{
         matrixInitializer.matrixInitialize(inputStream, this);
     }
 
+    public Matrix(int n, int m, char[][] arrayMatrix){
+       this.n = n;
+       this.m = m;
+       this.arrayMatrix = arrayMatrix;
+    }
+
     public int getN() {
         return n;
     }
