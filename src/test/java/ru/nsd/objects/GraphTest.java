@@ -1,3 +1,5 @@
+package ru.nsd.objects;
+
 import org.junit.Test;
 import org.mockito.Mockito;
 import ru.nsd.objects.Graph;
