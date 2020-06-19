@@ -3,27 +3,26 @@ package ru.nsd.objects;
 import ru.nsd.objectsinitializers.MatrixInitializer;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Matrix{
+public class Matrix {
     private int n;
     private int m;
     private char[][] arrayMatrix;
     private MatrixInitializer matrixInitializer = new MatrixInitializer();
 
-   public Matrix() throws Exception {
+    public Matrix() throws Exception {
         InputStream inputStream = new FileInputStream("./src/main/resources/input.txt");
         matrixInitializer.matrixInitialize(inputStream, this);
     }
 
-    public Matrix(int n, int m, char[][] arrayMatrix){
-       this.n = n;
-       this.m = m;
-       this.arrayMatrix = arrayMatrix;
+    public Matrix(int n, int m, char[][] arrayMatrix) {
+        this.n = n;
+        this.m = m;
+        this.arrayMatrix = arrayMatrix;
     }
 
     public int getN() {
@@ -50,12 +49,12 @@ public class Matrix{
         return arrayMatrix;
     }
 
-    public String toString(){
+    public String toString() {
         StringBuffer sb = new StringBuffer();
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 sb.append(arrayMatrix[i][j]);
-                if(j == (m - 1)){
+                if (j == (m - 1)) {
                     //sb.append('\n');
                 }
             }
@@ -63,41 +62,15 @@ public class Matrix{
         return sb.toString();
     }
 
-    public char[] toOneDimensionalArray(char[][] arrayMatrix){
-        char[] arr = new char[n*m];
-        int k = 0;
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                arr[k] = arrayMatrix[i][j];
-                k++;
-            }
-        }
-        return arr;
-    }
-
-    public int quantityOfDots(){
+    public int quantityOfDots() {
         int quantityOfDots = 0;
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                if(arrayMatrix[i][j] == '.'){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (arrayMatrix[i][j] == '.') {
                     quantityOfDots++;
                 }
             }
         }
         return quantityOfDots;
     }
-
-    public void matrixInitialize(InputStream fileStream, Matrix matrix) throws InputMismatchException, IOException {
-        Scanner sc = new Scanner(fileStream);
-        matrix.setN(sc.nextInt());
-        matrix.setM(sc.nextInt());
-        sc.nextLine();
-        matrix.setArrayMatrix(new char[matrix.getN()][matrix.getM()]);
-        for (int i = 0; i < matrix.getN(); i++) {
-            String str = sc.nextLine();
-            char[] arr = str.toCharArray();
-            System.arraycopy(arr, 0, matrix.getArrayMatrix()[i], 0, arr.length);
-        }
-    }
-
 }

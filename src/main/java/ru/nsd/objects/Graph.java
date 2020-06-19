@@ -11,6 +11,9 @@ public class Graph {
     public int[] numberOfConnectedComponent;
     private GraphInitializer graphInitializer = new GraphInitializer();
 
+    public Graph(){
+
+    }
 
     public Graph(Matrix matrix) {
         this.n = matrix.getN() * matrix.getM();
@@ -20,7 +23,6 @@ public class Graph {
             numberOfConnectedComponent[i] = 0;
         }
         graphInitializer.graphInitialize(this, matrix);
-
     }
 
     public int getN() {

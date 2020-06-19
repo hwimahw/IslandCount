@@ -180,7 +180,7 @@ public class GraphInitializer {
 
     }
 
-    public void fillGraph(Graph graph, Matrix matrix, int n, int m) {
+    private void fillGraph(Graph graph, Matrix matrix, int n, int m) {
         for (int i = 0; i < graph.getN(); i++) {
             for (int j = 0; j < graph.getN(); j++) {
                 graph.getArrayGraph()[i][j] = '0';

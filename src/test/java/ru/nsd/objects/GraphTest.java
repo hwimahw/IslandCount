@@ -1,12 +1,7 @@
 package ru.nsd.objects;
 
 import org.junit.Test;
-import org.mockito.Mockito;
-import ru.nsd.objects.Graph;
 import org.junit.*;
-import ru.nsd.objects.Matrix;
-
-import static org.mockito.Mockito.mock;
 
 public class GraphTest {
 
