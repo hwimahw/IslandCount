@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsd.objectsinitializers.MatrixInitializerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-19T13:54:42" hostname="DESKTOP-R58VLNV" time="0.009">
-  <properties/>
-  <testcase name="graphInitialize" classname="ru.nsd.objectsinitializers.MatrixInitializerTest" time="0.009"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

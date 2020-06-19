@@ -15,14 +15,7 @@ public class GraphInitializerTest {
     public void graphInitializeTest(){
         char[][] array = {{'#', '#'}, {'.', '.'}};
         Matrix matrix = new Matrix(2, 2, array);
-        Graph graph = new Graph();
-        graph.setN(matrix.getN() * matrix.getM());
-        graph.setArrayGraph(new char[graph.getN()][graph.getN()]);
-        graph.setNumberOfConnectedComponent(new int[graph.getN()]);
-        for (int i = 0; i < graph.getNumberOfConnectedComponent().length; i++) {
-            graph.getNumberOfConnectedComponent()[i] = 0;
-        }
-        graphInitializer.graphInitialize(graph, matrix);
+        Graph graph = new Graph(matrix);
 
         assertEquals(4, graph.getN());
         assertEquals("1100110000000000", graph.toString());
